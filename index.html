@@ -3,180 +3,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kebab Gourmet Mestre | Guida Completa</title>
-    <!-- Importazione Font Elegante -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Mestre Kebab Gourmet | L'Arte del Döner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #d32f2f;
-            --secondary: #ffc107;
-            --dark: #2d3436;
+            --primary: #c0392b;
+            --accent: #f39c12;
+            --dark: #1e272e;
             --light: #ffffff;
-            --bg: #f8f9fa;
+            --grey: #f1f2f6;
         }
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: var(--bg);
+            background-color: var(--grey);
             color: var(--dark);
             margin: 0;
-            padding: 0;
-            line-height: 1.6;
+            line-height: 1.8;
         }
 
-        /* Hero Section Estetica */
+        /* Hero Section */
         header {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                        url('https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=1200&q=80');
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1524350300060-3023ba47444a?auto=format&fit=crop&w=1500&q=80');
             background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 100px 20px;
-            text-align: center;
-            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
-        }
-
-        header h1 { font-size: 3.5rem; margin: 0; text-transform: uppercase; letter-spacing: 2px; }
-        header p { font-size: 1.2rem; opacity: 0.9; }
-
-        .container {
-            max-width: 1100px;
-            margin: -50px auto 50px;
-            padding: 0 20px;
-        }
-
-        section {
-            background: var(--light);
-            padding: 40px;
-            margin-bottom: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
-
-        h2 {
-            color: var(--primary);
-            font-size: 2rem;
+            background-attachment: fixed;
             display: flex;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            gap: 10px;
+            color: white;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
         }
 
-        /* Grid per i Ristoranti */
+        header h1 { 
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem; 
+            margin: 0; 
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        /* Sezione Storia */
+        .history-section {
+            padding: 80px 20px;
+            background: white;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            max-width: 1200px;
+            margin: -60px auto 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 10;
+        }
+
+        .history-text { flex: 1; min-width: 350px; padding: 20px; }
+        .history-image { flex: 1; min-width: 350px; border-radius: 15px; overflow: hidden; }
+        .history-image img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* Galleria Solo Kebab */
+        .kebab-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            padding: 40px 0;
+        }
+        .kebab-gallery img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .kebab-gallery img:hover { transform: scale(1.05); }
+
+        /* Grid Locali */
+        .container { max-width: 1200px; margin: auto; padding: 20px; }
+        
+        h2 { 
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem; 
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
         .grid-locali {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
         }
 
         .card {
-            background: #fff;
-            border-radius: 12px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-            border: 1px solid #eee;
-        }
-
-        .card:hover { transform: translateY(-10px); }
-
-        .card-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .card-content { padding: 20px; }
-        .card-content h3 { margin: 0 0 10px 0; color: var(--primary); }
-        .tag {
-            background: var(--secondary);
-            font-size: 0.7rem;
-            padding: 3px 10px;
+            background: white;
             border-radius: 20px;
-            font-weight: bold;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+        .card:hover { transform: translateY(-10px); }
+        .card-img { width: 100%; height: 230px; object-fit: cover; }
+        .card-content { padding: 25px; }
+        .tag { background: var(--accent); color: white; padding: 4px 12px; border-radius: 50px; font-size: 0.8rem; font-weight: bold; }
+
+        /* Citazione */
+        .quote {
+            background: var(--dark);
+            color: var(--accent);
+            text-align: center;
+            padding: 60px 20px;
+            font-style: italic;
+            font-size: 1.5rem;
+            margin: 50px 0;
         }
 
-        /* Footer */
         footer {
-            background: var(--dark);
-            color: white;
+            background: #111;
+            color: #777;
             text-align: center;
-            padding: 40px 20px;
-            margin-top: 50px;
+            padding: 50px 20px;
         }
 
         @media (max-width: 768px) {
             header h1 { font-size: 2.5rem; }
-            section { padding: 20px; }
+            .history-section { margin-top: 0; border-radius: 0; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Kebab Experience</h1>
-        <p>Il viaggio del gusto tra le calli e le piazze di Mestre</p>
+        <h1>Kebab Mestre</h1>
+        <p>L'eccellenza della carne speziata tra terraferma e laguna</p>
     </header>
 
     <div class="container">
-        <!-- Introduzione -->
-        <section>
-            <h2><span>🥙</span> L'Origine del Mito</h2>
-            <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
-                <div style="flex: 1; min-width: 300px;">
-                    <p>Non è solo cibo di strada: è un'arte millenaria. Il <strong>Döner Kebab</strong>, letteralmente "kebab che gira", nasce dalla sapiente sovrapposizione di fette di carne marinate, cotte lentamente per mantenere una succosità ineguagliabile.</p>
-                    <p>A Mestre, questa tradizione si è fusa con la velocità della vita urbana, creando punti di ritrovo iconici per giovani e lavoratori.</p>
-                </div>
-                <img src="https://images.unsplash.com/photo-1633321088390-80c80d4bd28c?auto=format&fit=crop&w=500&q=80" 
-                     alt="Kebab vicino" style="flex: 1; min-width: 300px; border-radius: 15px;">
+        
+        <!-- SEZIONE STORIA -->
+        <section class="history-section">
+            <div class="history-text">
+                <h2>L'Origine del Viaggio</h2>
+                <p>La storia del <strong>Döner Kebab</strong> affonda le radici nell'Impero Ottomano del XVIII secolo. Originariamente, la carne veniva cotta orizzontalmente, ma fu a Bursa, intorno al 1860, che il leggendario <em>Iskender Efendi</em> ebbe l'intuizione di girare lo spiedo in verticale.</p>
+                <p>Ma la vera rivoluzione avvenne negli anni '70 a <strong>Berlino</strong>. Gli immigrati turchi trasformarono un piatto da ristorante in un pasto da asporto, inserendo la carne nel pane <em>pide</em> per adattarsi ai ritmi frenetici della città. Da Berlino, il mito si è diffuso in tutta Europa, arrivando a Mestre, dove è diventato un pilastro dello street food locale.</p>
+            </div>
+            <div class="history-image">
+                <img src="https://images.unsplash.com/photo-1633321702518-7feccaf0ad44?auto=format&fit=crop&w=800&q=80" alt="Carne kebab che taglia">
             </div>
         </section>
 
-        <!-- Top Locali Grid -->
-        <section>
-            <h2><span>📍</span> I Top di Mestre</h2>
-            <div class="grid-locali">
-                <!-- Locale 1 -->
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=500&q=80" class="card-img" alt="Orient Express">
-                    <div class="card-content">
-                        <span class="tag">TOP QUALITY</span>
-                        <h3>Orient Express</h3>
-                        <p>Il tempio del kebab a pochi passi da Piazza Ferretto. Carne selezionata e ambiente pulitissimo.</p>
-                    </div>
-                </div>
+        <!-- GALLERIA SOLO KEBAB -->
+        <h2>Passione Visuale</h2>
+        <div class="kebab-gallery">
+            <img src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=500&q=80" alt="Kebab close up">
+            <img src="https://images.unsplash.com/photo-1561651823-34feb02250e4?auto=format&fit=crop&w=500&q=80" alt="Dürüm pronto">
+            <img src="https://images.unsplash.com/photo-1626700051175-656fc7ec68af?auto=format&fit=crop&w=500&q=80" alt="Carne speziata">
+            <img src="https://images.unsplash.com/photo-1633321088390-80c80d4bd28c?auto=format&fit=crop&w=500&q=80" alt="Salse e carne">
+        </div>
 
-                <!-- Locale 2 -->
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1561651823-34feb02250e4?auto=format&fit=crop&w=500&q=80" class="card-img" alt="Kebab da Jimmy">
-                    <div class="card-content">
-                        <span class="tag">STORICO</span>
-                        <h3>Kebab da Jimmy</h3>
-                        <p>In Corso del Popolo, Jimmy offre una piadina leggendaria e una salsa piccante che non si dimentica.</p>
-                    </div>
-                </div>
+        <div class="quote">
+            "Il segreto è nel taglio: sottile come un velo, caldo come il sole d'Anatolia."
+        </div>
 
-                <!-- Locale 3 -->
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1512152272829-e3139592d56f?auto=format&fit=crop&w=500&q=80" class="card-img" alt="Ali Baba">
-                    <div class="card-content">
-                        <span class="tag">STAZIONE</span>
-                        <h3>Ali Babà</h3>
-                        <p>Il rifugio perfetto per i viaggiatori in Via Cappuccina. Servizio rapido e salse artigianali.</p>
-                    </div>
+        <!-- I TOP LOCALI -->
+        <h2>I Maestri di Mestre</h2>
+        <div class="grid-locali">
+            <!-- Orient Express -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1644704078230-6644487b3203?auto=format&fit=crop&w=600&q=80" class="card-img" alt="Orient Express">
+                <div class="card-content">
+                    <span class="tag">QUALITÀ PREMIUM</span>
+                    <h3>Orient Express</h3>
+                    <p>Famoso per la freschezza degli ingredienti e la cura del locale. Un punto di riferimento vicino al centro.</p>
                 </div>
             </div>
-        </section>
 
-        <!-- Sezione Curiosità -->
-        <section style="background: var(--primary); color: white;">
-            <h2 style="color: var(--secondary);"><span>💡</span> Lo sapevi?</h2>
-            <p>Il segreto di un vero kebab sta nel <strong>Dürüm</strong> (la piadina arrotolata) o nel <strong>Pide</strong> (il pane soffice). A Mestre, la vera sfida è trovare il mix perfetto di salse bianca e rossa!</p>
-        </section>
+            <!-- Kebab da Jimmy -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=600&q=80" class="card-img" alt="Jimmy">
+                <div class="card-content">
+                    <span class="tag">L'ISTITUZIONE</span>
+                    <h3>Kebab da Jimmy</h3>
+                    <p>In Corso del Popolo, Jimmy non è solo un kebabbaro, è un pezzo di storia mestrina. Salsa piccante inimitabile.</p>
+                </div>
+            </div>
+
+            <!-- Ali Baba -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1512152272829-e3139592d56f?auto=format&fit=crop&w=600&q=80" class="card-img" alt="Ali Baba">
+                <div class="card-content">
+                    <span class="tag"> ZONA STAZIONE</span>
+                    <h3>Ali Babà</h3>
+                    <p>Velocità e sapore. Perfetto per chi scende dal treno e cerca un Dürüm sostanzioso e ben bilanciato.</p>
+                </div>
+            </div>
+
+            <!-- Nuovo Locale 4 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=600&q=80" class="card-img" alt="Istanbul Mestre">
+                <div class="card-content">
+                    <span class="tag">TRADIZIONALE</span>
+                    <h3>Istanbul Kebab</h3>
+                    <p>Situato in Via Piave, offre un pane artigianale sfornato ogni giorno che fa la differenza.</p>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <footer>
-        <p>Creato con passione per gli amanti del gusto di Mestre</p>
-        <p style="font-size: 0.8rem; opacity: 0.6;">© 2026 Guida Kebab Mestre</p>
+        <p><strong>Kebab Gourmet Mestre</strong> - La guida definitiva al gusto.</p>
+        <p>Progetto creato per i veri amanti della carne allo spiedo.</p>
+        <p style="font-size: 0.7rem; margin-top: 20px;">© 2026 Mestre Food Guide | No copyright intended for educational purposes.</p>
     </footer>
 
 </body>
