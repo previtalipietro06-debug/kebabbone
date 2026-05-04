@@ -3,110 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Il Mondo del Kebab - Mestre Edition</title>
+    <title>Kebab Gourmet Mestre | Guida Completa</title>
+    <!-- Importazione Font Elegante -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #d32f2f;
+            --secondary: #ffc107;
+            --dark: #2d3436;
+            --light: #ffffff;
+            --bg: #f8f9fa;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #d32f2f;
-            color: white;
-            padding: 2rem;
-            text-align: center;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-        section {
-            background: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        h2 {
-            color: #d32f2f;
-            border-bottom: 2px solid #ffc107;
-            padding-bottom: 5px;
-        }
-        .restaurant-list {
-            list-style: none;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg);
+            color: var(--dark);
+            margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
-        .restaurant-item {
-            padding: 15px;
-            border-left: 5px solid #ffc107;
-            background: #fff9e6;
-            margin-bottom: 10px;
-        }
-        .restaurant-name {
-            font-weight: bold;
-            font-size: 1.2rem;
-            display: block;
-        }
-        footer {
+
+        /* Hero Section Estetica */
+        header {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 20px;
             text-align: center;
-            font-size: 0.9rem;
-            color: #777;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+        }
+
+        header h1 { font-size: 3.5rem; margin: 0; text-transform: uppercase; letter-spacing: 2px; }
+        header p { font-size: 1.2rem; opacity: 0.9; }
+
+        .container {
+            max-width: 1100px;
+            margin: -50px auto 50px;
+            padding: 0 20px;
+        }
+
+        section {
+            background: var(--light);
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: var(--primary);
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Grid per i Ristoranti */
+        .grid-locali {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            border: 1px solid #eee;
+        }
+
+        .card:hover { transform: translateY(-10px); }
+
+        .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content { padding: 20px; }
+        .card-content h3 { margin: 0 0 10px 0; color: var(--primary); }
+        .tag {
+            background: var(--secondary);
+            font-size: 0.7rem;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5rem; }
+            section { padding: 20px; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>L'Arte del Kebab</h1>
-        <p>Tradizione, sapore e i migliori indirizzi a Mestre</p>
+        <h1>Kebab Experience</h1>
+        <p>Il viaggio del gusto tra le calli e le piazze di Mestre</p>
     </header>
 
-    <section>
-        <h2>Cos'è il Kebab?</h2>
-        <p>
-            Il <strong>kebab</strong> è un piatto a base di carne, tipico della cucina turca, diventato un fenomeno globale. 
-            La versione più celebre è il <em>Döner Kebab</em>, dove la carne viene cucinata su uno spiedo verticale rotante. 
-            Servito nel pane arabo o nella piadina (dürüm), viene arricchito con verdure fresche e salse iconiche come quella allo yogurt o la piccante harissa.
-        </p>
-    </section>
+    <div class="container">
+        <!-- Introduzione -->
+        <section>
+            <h2><span>🥙</span> L'Origine del Mito</h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
+                <div style="flex: 1; min-width: 300px;">
+                    <p>Non è solo cibo di strada: è un'arte millenaria. Il <strong>Döner Kebab</strong>, letteralmente "kebab che gira", nasce dalla sapiente sovrapposizione di fette di carne marinate, cotte lentamente per mantenere una succosità ineguagliabile.</p>
+                    <p>A Mestre, questa tradizione si è fusa con la velocità della vita urbana, creando punti di ritrovo iconici per giovani e lavoratori.</p>
+                </div>
+                <img src="https://images.unsplash.com/photo-1633321088390-80c80d4bd28c?auto=format&fit=crop&w=500&q=80" 
+                     alt="Kebab vicino" style="flex: 1; min-width: 300px; border-radius: 15px;">
+            </div>
+        </section>
 
-    <section>
-        <h2>I Migliori Posti a Mestre (VE)</h2>
-        <p>Se ti trovi a Mestre e hai voglia di un kebab di qualità, ecco alcuni degli indirizzi storici e più apprezzati:</p>
-        
-        <ul class="restaurant-list">
-            <li class="restaurant-item">
-                <span class="restaurant-name">1. Orient Express</span>
-                <p>Situato vicino a Piazza Ferretto, è un'istituzione. Celebre per la pulizia e la qualità della carne, oltre che per le porzioni generose.</p>
-            </li>
-            <li class="restaurant-item">
-                <span class="restaurant-name">2. Kebab da Jimmy</span>
-                <p>In zona Corso del Popolo, è perfetto per uno spuntino veloce. Molto amato dagli studenti e da chi cerca un sapore autentico a prezzi onesti.</p>
-            </li>
-            <li class="restaurant-item">
-                <span class="restaurant-name">3. Alì Babà (Via Cappuccina)</span>
-                <p>Uno dei punti di riferimento storici vicino alla stazione. Ottimo per chi scende dal treno e vuole un panino ben condito con salse fatte in casa.</p>
-            </li>
-            <li class="restaurant-item">
-                <span class="restaurant-name">4. Istanbul Kebab</span>
-                <p>Spesso lodato per la freschezza delle verdure e la cortesia del personale. Si trova in diverse zone strategiche del centro.</p>
-            </li>
-        </ul>
-    </section>
+        <!-- Top Locali Grid -->
+        <section>
+            <h2><span>📍</span> I Top di Mestre</h2>
+            <div class="grid-locali">
+                <!-- Locale 1 -->
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=500&q=80" class="card-img" alt="Orient Express">
+                    <div class="card-content">
+                        <span class="tag">TOP QUALITY</span>
+                        <h3>Orient Express</h3>
+                        <p>Il tempio del kebab a pochi passi da Piazza Ferretto. Carne selezionata e ambiente pulitissimo.</p>
+                    </div>
+                </div>
 
-    <section>
-        <h2>Consigli per l'ordinazione</h2>
-        <ul>
-            <li><strong>Salse:</strong> Chiedi sempre la salsa allo yogurt per bilanciare la sapidità della carne.</li>
-            <li><strong>Pane:</strong> Prova il <em>Dürüm</em> se preferisci una piadina arrotolata più facile da mangiare camminando.</li>
-            <li><strong>Verdure:</strong> Non dimenticare le cipolle (se non hai appuntamenti galanti dopo!).</li>
-        </ul>
-    </section>
+                <!-- Locale 2 -->
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1561651823-34feb02250e4?auto=format&fit=crop&w=500&q=80" class="card-img" alt="Kebab da Jimmy">
+                    <div class="card-content">
+                        <span class="tag">STORICO</span>
+                        <h3>Kebab da Jimmy</h3>
+                        <p>In Corso del Popolo, Jimmy offre una piadina leggendaria e una salsa piccante che non si dimentica.</p>
+                    </div>
+                </div>
+
+                <!-- Locale 3 -->
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1512152272829-e3139592d56f?auto=format&fit=crop&w=500&q=80" class="card-img" alt="Ali Baba">
+                    <div class="card-content">
+                        <span class="tag">STAZIONE</span>
+                        <h3>Ali Babà</h3>
+                        <p>Il rifugio perfetto per i viaggiatori in Via Cappuccina. Servizio rapido e salse artigianali.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sezione Curiosità -->
+        <section style="background: var(--primary); color: white;">
+            <h2 style="color: var(--secondary);"><span>💡</span> Lo sapevi?</h2>
+            <p>Il segreto di un vero kebab sta nel <strong>Dürüm</strong> (la piadina arrotolata) o nel <strong>Pide</strong> (il pane soffice). A Mestre, la vera sfida è trovare il mix perfetto di salse bianca e rossa!</p>
+        </section>
+    </div>
 
     <footer>
-        <p>&copy; 2024 Guida al Kebab Mestre - Buon appetito!</p>
+        <p>Creato con passione per gli amanti del gusto di Mestre</p>
+        <p style="font-size: 0.8rem; opacity: 0.6;">© 2026 Guida Kebab Mestre</p>
     </footer>
 
 </body>
